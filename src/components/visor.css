@@ -1,0 +1,16 @@
+.visor {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    
+
+
+    color: aliceblue;
+    width: 82%;
+    height: 2.5em;
+}
+
+.fixed {
+    color: rgb(160, 160, 160);
+}
