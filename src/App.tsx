@@ -28,18 +28,23 @@ function App() {
 
   const operationButtonEvent = (op: string) => {
     setOperation(op);
-    setFixedNumber(number);
+    if (number !== "0") {
+      setFixedNumber(number);
+    }
     setNumber("0");
+    if (fixedNumber !== "") {
+      setFixedNumber(showResult(operation, number, fixedNumber));
+    }
   }
 
-  const equalButtonEvent = () =>{
+  const equalButtonEvent = () => {
     setNumber(showResult(operation, number, fixedNumber));
     setFixedNumber("");
     setOperation("");
   }
 
-  const dotButtonEvent = () =>{
-    if(!number.split("").includes(".")){
+  const dotButtonEvent = () => {
+    if (!number.split("").includes(".")) {
       setNumber(concatNumber(number, "."));
     }
   }
@@ -75,7 +80,7 @@ function App() {
         <button onClick={() => equalButtonEvent()} id="equal" className="operation-button">=</button>
       </div>
     </div>//app-div
-    
+
   )
 }
 export default App
